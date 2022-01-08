@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input,
+textarea,
+button {
+    border: none;
+}
+input:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+body {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+/* flex */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+.jc-c {
+    justify-content: center;
+}
+.jc-s {
+    justify-content: flex-start;
+}
+.jc-e {
+    justify-content: flex-end;
+}
+.jc-sb {
+    justify-content: space-between;
+}
+.jc-sa {
+    justify-content: space-around;
+}
+.jc-se {
+    justify-content: space-evenly;
+}
+.ai-c {
+    align-items: center;
+}
+.ai-s {
+    align-items: flex-start;
+}
+.ai-e {
+    align-items: flex-end;
+}
+.flex-full {
+    flex: 1;
+}
+.flex-half {
+    flex: 0.5;
+}
+.flex-quarter {
+    flex: 0.25;
+}
+
+.as-c {
+    align-self: center;
+}
+.as-s {
+    align-self: flex-start;
+}
+.as-e {
+    align-self: flex-end;
+}
+
+h3 {
+    margin: 10px 0px;
+    color: rgb(63, 63, 198);
+}
+
+.wrapper {
+    display: flex;
+}
+.wrapper > div { 
+    background: white;
+    border-radius: 10px;
+    margin-left: 20px;
+    padding: 20px;
+    height: 400px;
+}
+.wrapper > div:nth-child(1) {
+    margin-left: 0;
+    width: 500px;
+}
+.wrapper > div:nth-child(2) {
+    flex: 1;
+}
+.input-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-container-floating {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex: 1;
+    margin-left: 10px;
+}
+.input-container-floating:first-child {
+    margin-left: 0;
+}
+
+.input-container-floating label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: white;
+    padding: 0px 5px;
+    color:rgba(0, 0, 0, 0.7);
+    z-index: 0;
+}
+
+.input-container-floating input,
+.input-container-floating textarea {
+    border: 0.5px solid rgba(0, 0, 0, 0.4);
+    height: 50px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    z-index: 1;
+}
+.input-container-floating textarea {
+	height: 100%;
+	padding: 10px;
+}
+
+.input-container-floating input:focus,
+.input-container-floating textarea:focus {
+    box-shadow: 0px 0px 0px 4px rgba(238, 104, 51, 0.3);
+    border-color: rgb(238, 104, 51);
+    transition: 300ms;
+}
+
+.input-container-floating input:focus ~ label,
+.input-container-floating input:valid ~ label,
+.input-container-floating textarea:focus ~ label,
+.input-container-floating textarea:valid ~ label {
+    top: -2px;
+    font-size: 14px;
+    transition: 300ms ease-in-out;
+    color: rgb(238, 104, 51);
+    z-index: 1;
+}
+
+.series-block {
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 0;
+    margin-bottom: 20px;
+}
+.series-heading {
+    margin-top: 10px;
+}
+.input-box-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.input-box-container > input {
+    border: 0.5px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 100px;
+}
+/* Buttons */
+.btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+.btn-primary {
+    background: rgb(238, 104, 51);
+    color: white;
+}
+.btn-secondary {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+.btn-danger {
+    background: rgba(255, 0, 0, 0.7);
+    color: white;
+}
+
+.btn-small {
+    padding: 5px 8px;
+    font-size: 12px;
+}
+
+#graph-container {
+}
+
+#data-feed-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
