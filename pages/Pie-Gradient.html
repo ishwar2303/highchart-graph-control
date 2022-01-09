@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Line Graph</title>
+    <title>Pie Gradient</title>
     <!-- Highcharts -->
     <script src="https://code.highcharts.com/highcharts.src.js"></script>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <h3 class="heading">Line Chart | Basic</h3>
+    <h3 class="heading">Pie Chart | Gradient</h3>
     <div class="wrapper">
         <div id="graph-container">
             <p>1. Configure graph settings</p>
@@ -18,7 +18,7 @@
             <p>3. Load Graph</p>
         </div>
         <div class="graph-settings">
-            <h3>Graph Settings</h3>
+            <h3 class="">Graph Settings</h3>
             <div class="input-block">
                 <div class="input-container-floating">
                     <input id="graph-title" type="text" required/>
@@ -27,26 +27,20 @@
             </div>
             <div class="input-block">
                 <div class="input-container-floating">
-                    <input id="xAxis-title" type="text" required/>
-                    <label>X-Axis Title</label>
+                    <input id="value-suffix" type="text" value="%" required/>
+                    <label>Value Suffix</label>
                 </div>
             </div>
             <div class="input-block">
-                <div class="input-container-floating">
-                    <input id="yAxis-title" type="text" required/>
-                    <label>Y-Axis Title</label>
-                </div>
-            </div>
-            <div class="input-block">
-                <div class="input-container-floating">
-                    <input id="point-start" type="text" required/>
-                    <label>Point Start</label>
-                </div>
-            </div>
-            <div class="input-block">
-                <div class="input-container-floating">
-                    <input id="data-length" type="number" required/>
-                    <label>Data Length</label>
+                <div class="customized-radio">
+                    <label>
+                        <input type="radio" value="1" name="viewType" checked/>
+                        <span>Percentage</span>
+                    </label>
+                    <label>
+                        <input type="radio" value="1" name="viewType" />
+                        <span>Normal</span>
+                    </label>
                 </div>
             </div>
             <div class="flex-row jc-e">
@@ -56,11 +50,20 @@
     </div>
     <h3 class="heading">Feed Data</h3>
     <div id="data-feed-container">
-        <div id="add-series-container"></div>
+        <div id="add-series-container" >
+            <div class="input-block">
+                <div class="input-container-floating">
+                    <input id="series-name" type="text" requried/>
+                    <label>Series Name</label>
+                </div>
+            </div>
+            <div id="add-data-container">
+            </div>
+        </div>
         <div class="flex-row jc-e">
-            <button class="btn btn-primary" onclick="addSeries()">Add Series</button>
+            <button id="add-data-btn" class="btn btn-primary">Add Data</button>
         </div>
     </div>
-    <script src="../js/basic-line.js"></script>
+    <script src="../js/pie-gradient.js"></script>
 </body>
 </html>

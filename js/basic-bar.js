@@ -1,68 +1,69 @@
 const loadChart = (graphTitle, xTitle, yTitle, pStart, seriesData) => {
 
     Highcharts.chart('graph-container', {
-
+        chart: {
+            type: 'bar'
+        },
         title: {
             text: graphTitle
         },
-    
         subtitle: {
             text: null
         },
-    
-        yAxis: {
+        xAxis: {
+            categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
             title: {
-                text: yTitle
+                text: null
             }
         },
-    
-        xAxis: {
+        yAxis: {
+            min: 0,
             title: {
-                text: xTitle
-            },
-            accessibility: {
-                rangeDescription: 'Range: 2010 to 2017'
+                text: 'Population (millions)',
+                align: 'high'
             },
             labels: {
-                align: 'left',
-                rotation: 45
+                overflow: 'justify'
             }
         },
-    
+        tooltip: {
+            valueSuffix: ' millions'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
         legend: {
             layout: 'vertical',
             align: 'right',
-            verticalAlign: 'middle'
+            verticalAlign: 'top',
+            x: -40,
+            y: 80,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor:
+                Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+            shadow: true
         },
-    
-        plotOptions: {
-            series: {
-                label: {
-                    connectorAllowed: false
-                },
-                pointStart: pStart
-            }
-        },
-    
-        series: seriesData,
-    
         credits: {
             enabled: false
         },
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
-        }
+        series: [{
+            name: 'Year 1800',
+            data: [107, 31, 635, 203, 2]
+        }, {
+            name: 'Year 1900',
+            data: [133, 156, 947, 408, 6]
+        }, {
+            name: 'Year 2000',
+            data: [814, 841, 3714, 727, 31]
+        }, {
+            name: 'Year 2016',
+            data: [1216, 1001, 4436, 738, 40]
+        }]
     });
 }
 
